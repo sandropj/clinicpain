@@ -31,7 +31,7 @@
     body{
       margin:0;
       font-family:'Lato',system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color:var(--gray-300);
+      color:var(--gray-600);
       background:linear-gradient(180deg,#0a2f31,#0f4b4d);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -43,14 +43,14 @@
     header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{
-      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gray-300),#063739);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-family:'Cinzel',serif;font-size:20px;box-shadow:0 6px 18px rgba(15,75,77,0.12)
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gray-600),#063739);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-family:'Cinzel',serif;font-size:20px;box-shadow:0 6px 18px rgba(15,75,77,0.12)
     }
     .nav{display:flex;gap:12px;align-items:center}
     .btn{background:var(--gold);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
     .hero{
       display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:28px 0;min-height:420px
     }
-    .hero h1{font-family:'Cinzel',serif;font-size:36px;margin:0;color:var(--gray-300)}
+    .hero h1{font-family:'Cinzel',serif;font-size:36px;margin:0;color:var(--gray-600)}
     .lead{font-size:18px;color:var(--text-);margin:12px 0 20px}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .primary{background:var(--petrol);color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
@@ -65,18 +65,18 @@
     .credentials p{margin:6px 0 0;color:var(--text-light)}
 
     /* Grid sections */
-    section{padding:34px 0;border-top:1px solid var(--gray-300)}
+    section{padding:34px 0;border-top:1px solid var(--gray-600)}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .who-list{display:flex;flex-direction:column;gap:10px}
-    .who-item{background:linear-gradient(180deg,#fff,var(--gray-100));padding:12px;border-radius:10px;border:1px solid var(--gray-300)}
+    .who-item{background:linear-gradient(180deg,#fff,var(--gray-600));padding:12px;border-radius:10px;border:1px solid var(--gray-600)}
 
     /* Benefits */
     .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,var(--gray-100));border:1px solid var(--gray-300)}
+    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,var(--gray-600));border:1px solid var(--gray-600)}
     .benefit h4{margin:0 0 8px}
 
     /* FAQ */
-    .faq-item{border-bottom:1px dashed var(--gray-300);padding:12px 0}
+    .faq-item{border-bottom:1px dashed var(--gray-600);padding:12px 0}
     .faq-q{display:flex;justify-content:space-between;cursor:pointer}
     .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;padding-top:0}
     .faq-a.open{max-height:400px;padding-top:10px}
@@ -100,7 +100,7 @@
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo"><img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" /></div>
+        <div class="logo"><img src="img/p1logo.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" /></div>
         <div>
           <div style="font-weight:700">Dr. Sandro Pereira</div>
           <div style="font-size:13px;color:var(--text-light)">Cuidado Inteligente — Medicina da Dor</div>
@@ -178,7 +178,7 @@
             <h4 style="margin-top:0;font-family:'Cinzel',serif">Posicionamento</h4>
             <p style="color:var(--text-light)">Trabalho orientado por evidências, com foco em individualização do cuidado — menos dependência de opioides, mais atenção a reabilitação e qualidade de vida.</p>
             <div style="margin-top:12px;display:flex;gap:10px">
-              <img src="img/p1logo.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" />
+              <img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" />
               <div style="flex:1">
                 <strong style="display:block">Consulta estruturada</strong>
                 <small style="color:var(--text-light)">Avaliação, plano terapêutico e seguimento.</small>
@@ -305,5 +305,6 @@
   </script>
 </body>
 </html>
+
 
 
