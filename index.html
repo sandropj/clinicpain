@@ -31,7 +31,7 @@
     body{
       margin:0;
       font-family:'Lato',system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color:var(--petrol-light);
+      color:var(--petrol);
       background:linear-gradient(180deg,#0a2f31,#0f4b4d);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -50,11 +50,11 @@
     .hero{
       display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:28px 0;min-height:420px
     }
-    .hero h1{font-family:'Cinzel',serif;font-size:36px;margin:0;color:var(--petrol-light)}
-    .lead{font-size:18px;color:var(--text-light);margin:12px 0 20px}
+    .hero h1{font-family:'Cinzel',serif;font-size:36px;margin:0;color:var(--petrol)}
+    .lead{font-size:18px;color:var(--text-);margin:12px 0 20px}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .primary{background:var(--petrol);color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
-    .ghost{border:1px solid var(--petrol);padding:11px 16px;border-radius:12px;color:var(--petrol-light);text-decoration:none}
+    .ghost{border:1px solid var(--petrol);padding:11px 16px;border-radius:12px;color:var(--petrol);text-decoration:none}
 
     /* Card */
     .card{background:var(--white);border-radius:var(--radius);box-shadow:0 8px 30px rgba(10,30,35,0.06);padding:18px}
@@ -100,7 +100,7 @@
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo">SP</div>
+        <div class="logo"><img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" /></div>
         <div>
           <div style="font-weight:700">Dr. Sandro Pereira</div>
           <div style="font-size:13px;color:var(--text-light)">Cuidado Inteligente — Medicina da Dor</div>
@@ -305,3 +305,4 @@
   </script>
 </body>
 </html>
+
