@@ -7,23 +7,35 @@
   <meta name="description" content="Consulta médica online com o Dr. Sandro Pereira (CRM/RS 61741) para avaliação e tratamento da dor, com cuidado inteligente e humanizado." />
   <style>
     :root {
-      --azul: #002d3b;
-      --dourado: #c9a24d;
-      --cinza: #f4f4f4;
-      --branco: #ffffff;
-      --texto: #1f2933;
+      /* Paleta fornecida pelo usuário */
+      --azul-petroleo: #0A3A40;   /* Azul Petróleo Profundo — cor principal */
+      --dourado: #C4A24A;        /* Dourado Premium — destaques / botões */
+      --marfim: #EDE5D6;         /* Marfim Suave — fundos claros / cartões */
+      --bege-claro: #F4ECDC;     /* Bege Claro Neutro — fundos secundários */
+      /* cores auxiliares para texto / contraste */
+      --texto-escuro: #0b2b2f;   /* tom escuro próximo ao azul para textos em fundos claros */
+      --texto-claro: #ffffff;    /* texto em fundos escuros */
+      --focus: rgba(196,162,74,0.18);
     }
+
+    /* Reset e base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--cinza);
-      color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bege-claro); /* fundo geral usando Bege Claro Neutro */
+      color: var(--texto-escuro);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* HEADER / TOPO */
     header {
-      background: var(--azul);
-      color: var(--branco);
+      background: linear-gradient(180deg, var(--azul-petroleo), rgba(10,58,64,0.95));
+      color: var(--marfim); /* texto claro (marfim) sobre azul */
       padding: 1.5rem 1rem;
+      box-shadow: 0 6px 20px rgba(10,58,64,0.18);
     }
     .container {
       max-width: 1080px;
@@ -40,14 +52,18 @@
       font-family: "Cinzel", serif;
       font-size: 1.6rem;
       letter-spacing: 0.06em;
+      color: var(--marfim);
     }
     .logo-titulo p {
       font-size: 0.9rem;
-      opacity: 0.9;
+      opacity: 0.95;
+      color: rgba(237,229,214,0.95);
     }
+
+    /* HERO (área de autoridade) */
     .hero {
-      background: var(--azul);
-      color: var(--branco);
+      background: var(--azul-petroleo); /* destaque principal */
+      color: var(--marfim);
       padding: 2.5rem 0 3rem;
     }
     .hero-grid {
@@ -60,14 +76,17 @@
       font-size: 2rem;
       margin-bottom: 1rem;
       font-family: "Cinzel", serif;
+      color: var(--marfim);
     }
     .hero p.sub {
       font-size: 1.05rem;
       margin-bottom: 1.5rem;
+      color: rgba(237,229,214,0.95);
     }
     .hero ul {
       margin-bottom: 1.5rem;
       list-style: none;
+      color: rgba(237,229,214,0.95);
     }
     .hero ul li::before {
       content: "•";
@@ -76,6 +95,8 @@
       display: inline-block;
       width: 1rem;
     }
+
+    /* Botões */
     .botoes {
       display: flex;
       flex-wrap: wrap;
@@ -91,41 +112,53 @@
       text-align: center;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.18s ease;
       white-space: nowrap;
     }
     .btn-primario {
-      background: var(--dourado);
-      color: #111827;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      background: var(--dourado); /* destaque principal */
+      color: var(--azul-petroleo); /* texto escuro para contraste com dourado */
+      box-shadow: 0 6px 18px rgba(10,58,64,0.18);
+      border: 1px solid rgba(10,58,64,0.08);
     }
     .btn-primario:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(10,58,64,0.24);
     }
     .btn-secundario {
       background: transparent;
-      color: var(--branco);
-      border-color: rgba(255,255,255,0.4);
+      color: var(--marfim);
+      border-color: rgba(237,229,214,0.25);
+      border: 1px solid rgba(237,229,214,0.18);
+      padding: 0.75rem 1.25rem;
     }
     .btn-secundario:hover {
-      background: rgba(15,23,42,0.55);
+      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 0 0 4px var(--focus);
     }
+
+    /* Hero card / cartão de destaque dentro do hero */
     .hero-card {
-      background: rgba(15,23,42,0.85);
+      background: var(--marfim); /* marfim para área de respiro */
+      color: var(--azul-petroleo);
       border-radius: 1.25rem;
       padding: 1.5rem;
-      border: 1px solid rgba(148,163,184,0.5);
+      border: 1px solid rgba(196,162,74,0.12); /* leve traço dourado */
+      box-shadow: 0 10px 30px rgba(10,58,64,0.06);
     }
     .hero-card h3 {
       margin-bottom: 0.75rem;
       font-size: 1.05rem;
+      color: var(--azul-petroleo);
     }
     .hero-card p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       opacity: 0.95;
       margin-bottom: 0.4rem;
+      color: var(--azul-petroleo);
     }
+
+    /* SEÇÕES E CARDS */
     section {
       padding: 2.5rem 0;
     }
@@ -133,7 +166,7 @@
       font-size: 1.5rem;
       margin-bottom: 1.2rem;
       font-family: "Cinzel", serif;
-      color: #111827;
+      color: var(--azul-petroleo);
     }
     .grid-2 {
       display: grid;
@@ -141,48 +174,60 @@
       gap: 2rem;
     }
     .card {
-      background: var(--branco);
+      background: var(--marfim); /* cartões em marfim para contraste */
       border-radius: 1.25rem;
       padding: 1.5rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.08);
-      border: 1px solid rgba(15,23,42,0.06);
+      box-shadow: 0 12px 30px rgba(10,58,64,0.06);
+      border: 1px solid rgba(10,58,64,0.04);
+      color: var(--azul-petroleo);
     }
     .card h4 {
       font-size: 1.05rem;
       margin-bottom: 0.6rem;
+      color: var(--azul-petroleo);
     }
     .card ul {
       padding-left: 1.1rem;
       font-size: 0.95rem;
+      color: var(--azul-petroleo);
     }
     .card ul li {
       margin-bottom: 0.3rem;
     }
+
+    /* FAQ */
     .faq-item + .faq-item {
       margin-top: 1rem;
     }
     .faq-pergunta {
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.2rem;
+      color: var(--azul-petroleo);
     }
+
+    /* CHAMADA FINAL - mantém fundo de autoridade */
     .chamada-final {
       text-align: center;
       padding: 2.5rem 1.5rem;
-      background: var(--azul);
-      color: var(--branco);
+      background: linear-gradient(180deg, var(--azul-petroleo), rgba(10,58,64,0.96));
+      color: var(--marfim);
       border-radius: 1.5rem;
-      box-shadow: 0 16px 40px rgba(15,23,42,0.4);
+      box-shadow: 0 16px 40px rgba(10,58,64,0.32);
     }
     .chamada-final p {
       margin-bottom: 1.3rem;
       font-size: 1.02rem;
+      color: rgba(237,229,214,0.95);
     }
+
     footer {
       text-align: center;
-      font-size: 0.8rem;
-      color: #6b7280;
+      font-size: 0.85rem;
+      color: rgba(10,58,64,0.6);
       padding: 1.5rem 1rem 2.5rem;
     }
+
+    /* RESPONSIVIDADE */
     @media (max-width: 900px) {
       .hero-grid, .grid-2, .topo {
         grid-template-columns: 1fr;
@@ -196,6 +241,13 @@
         border-radius: 0;
       }
     }
+
+    /* Acessibilidade - foco */
+    a:focus, button:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -205,6 +257,10 @@
       <div class="logo-titulo">
         <h1>Sandro Pereira | Cuidado Inteligente</h1>
         <p>CRM/RS 61741 – Consulta médica online em dor e cuidados contínuos</p>
+      </div>
+      <!-- espaço para logo / contato rápido -->
+      <div style="text-align:right;">
+        <div style="font-size:0.9rem; color:rgba(237,229,214,0.95)">Atendimento por teleconsulta</div>
       </div>
     </div>
   </header>
@@ -232,8 +288,8 @@
         </div>
 
         <div>
-          <div class="hero-card">
-            <h3>Como posso te ajudar?</h3>
+          <div class="hero-card" aria-labelledby="como-ajudo">
+            <h3 id="como-ajudo">Como posso te ajudar?</h3>
             <p>• Dor crônica (coluna, articulações, musculoesquelética)</p>
             <p>• Dor de cabeça frequente</p>
             <p>• Dor após lesões ou cirurgias</p>
