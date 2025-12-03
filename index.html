@@ -22,15 +22,12 @@
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <!-- Preload the CSS request for fonts (improves LCP) -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  <!-- Basic theme color for mobile -->
   <meta name="theme-color" content="#0A3A40" />
 
   <style>
-    /* Palette */
     :root{
       --azul-petroleo: #0A3A40;
       --dourado: #C4A24A;
@@ -42,8 +39,6 @@
       --container-w: 1100px;
       --radius-lg: 14px;
     }
-
-    /* Reset moderno e desempenho */
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -57,168 +52,61 @@
       -webkit-text-size-adjust:100%;
       text-rendering:optimizeLegibility;
     }
-
-    /* Container */
     .container{
       width:100%;
       max-width:var(--container-w);
       margin:0 auto;
       padding:0 1rem;
     }
-
-    /* HEADER */
     header{
       background:linear-gradient(180deg,var(--azul-petroleo), rgba(10,58,64,0.95));
       color:var(--marfim);
       padding:1rem 0;
       position:relative;
     }
-    .topo{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1rem;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:1rem;
-    }
-    /* Simple SVG mark placeholder (can replace with real SVG) */
+    .topo{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:1rem}
     .brand-mark{
-      width:56px;height:56px;
-      border-radius:12px;
-      display:inline-grid;
-      place-items:center;
+      width:56px;height:56px;border-radius:12px;display:inline-grid;place-items:center;
       background:linear-gradient(135deg,var(--marfim), rgba(237,229,214,0.85));
-      color:var(--azul-petroleo);
-      font-weight:700;
-      font-family:"Cinzel", serif;
-      box-shadow:0 6px 18px rgba(10,58,64,0.12);
-      flex-shrink:0;
+      color:var(--azul-petroleo);font-weight:700;font-family:"Cinzel", serif;
+      box-shadow:0 6px 18px rgba(10,58,64,0.12);flex-shrink:0;
     }
-    .brand h1{
-      font-family:"Cinzel", serif;
-      font-size:1.15rem;
-      margin:0;
-      color:var(--marfim);
-      line-height:1;
-    }
+    .brand h1{font-family:"Cinzel", serif;font-size:1.15rem;margin:0;color:var(--marfim);line-height:1}
     .brand p{margin:0;font-size:0.85rem;color:rgba(237,229,214,0.95)}
-
-    /* Header actions */
     .header-actions{display:flex;gap:0.75rem;align-items:center}
-    .contact-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:0.6rem;
-      background:transparent;
-      border:1px solid rgba(237,229,214,0.12);
-      padding:0.45rem 0.8rem;
-      border-radius:999px;
-      color:var(--marfim);
-      font-weight:600;
-      text-decoration:none;
-      font-size:0.9rem;
-    }
-    .contact-pill svg{width:18px;height:18px;display:block}
-
-    /* HERO (ÁREA DE AUTORIDADE) */
-    .hero{
-      margin-top:-22px; /* overlap for depth */
-      padding:2.2rem 0 3.2rem;
-      color:var(--marfim);
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1fr 420px;
-      gap:2rem;
-      align-items:center;
-    }
-
-    .hero-left h2{
-      font-family:"Cinzel", serif;
-      font-size:2.1rem;
-      margin:0 0 0.6rem 0;
-      color:var(--marfim);
-      line-height:1.05;
-    }
-    .hero-left p.lead{
-      margin:0 0 1rem 0;
-      color:rgba(237,229,214,0.95);
-      font-size:1.02rem;
-    }
+    .contact-pill{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;border:1px solid rgba(237,229,214,0.12);padding:0.45rem 0.8rem;border-radius:999px;color:var(--marfim);font-weight:600;text-decoration:none;font-size:0.9rem}
+    .hero{margin-top:-22px;padding:2.2rem 0 3.2rem;color:var(--marfim)}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+    .hero-left h2{font-family:"Cinzel", serif;font-size:2.1rem;margin:0 0 0.6rem 0;color:var(--marfim);line-height:1.05}
+    .hero-left p.lead{margin:0 0 1rem 0;color:rgba(237,229,214,0.95);font-size:1.02rem}
     .hero-left ul{list-style:none;padding:0;margin:0 0 1.2rem 0}
-    .hero-left ul li{
-      display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:0.55rem;color:rgba(237,229,214,0.95)
-    }
-    .hero-left ul li .dot{
-      margin-top:0.15rem;
-      color:var(--dourado);
-      font-weight:700;
-    }
-
+    .hero-left ul li{display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:0.55rem;color:rgba(237,229,214,0.95)}
+    .hero-left ul li .dot{margin-top:0.15rem;color:var(--dourado);font-weight:700}
     .hero-cta{display:flex;gap:0.8rem;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:0.6rem;
-      text-decoration:none;border-radius:999px;padding:0.82rem 1.2rem;font-weight:700;font-size:0.95rem;
-      transition:transform .12s ease, box-shadow .12s ease;
-    }
-    .btn-primary{
-      background:var(--dourado);
-      color:var(--azul-petroleo);
-      border:1px solid rgba(10,58,64,0.06);
-      box-shadow:0 10px 24px rgba(10,58,64,0.14);
-    }
-    .btn-secondary{
-      background:transparent;color:var(--marfim);border:1px solid rgba(237,229,214,0.14)
-    }
+    .btn{display:inline-flex;align-items:center;gap:0.6rem;text-decoration:none;border-radius:999px;padding:0.82rem 1.2rem;font-weight:700;font-size:0.95rem;transition:transform .12s ease, box-shadow .12s ease}
+    .btn-primary{background:var(--dourado);color:var(--azul-petroleo);border:1px solid rgba(10,58,64,0.06);box-shadow:0 10px 24px rgba(10,58,64,0.14)}
+    .btn-secondary{background:transparent;color:var(--marfim);border:1px solid rgba(237,229,214,0.14)}
     .btn:focus{outline:3px solid var(--focus);outline-offset:3px}
-
-    /* Hero card (direita) */
-    .hero-card{
-      background:var(--marfim);color:var(--azul-petroleo);
-      border-radius:var(--radius-lg);padding:1.3rem;border:1px solid rgba(196,162,74,0.08);
-      box-shadow:0 18px 40px rgba(10,58,64,0.06);
-    }
+    .hero-card{background:var(--marfim);color:var(--azul-petroleo);border-radius:var(--radius-lg);padding:1.3rem;border:1px solid rgba(196,162,74,0.08);box-shadow:0 18px 40px rgba(10,58,64,0.06)}
     .hero-card h3{font-size:1.05rem;margin:0 0 0.55rem 0;font-weight:700}
     .hero-card p{margin:0.35rem 0;color:var(--azul-petroleo)}
-
-    /* Responsive hero image (P1) */
     .hero-media{width:100%;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(10,58,64,0.08)}
-
-    /* Main sections */
     main section{padding:2rem 0}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
-    .card{
-      background:var(--marfim);border-radius:12px;padding:1.2rem;border:1px solid rgba(10,58,64,0.04);
-      box-shadow:0 10px 30px rgba(10,58,64,0.04);
-      color:var(--azul-petroleo);
-    }
+    .card{background:var(--marfim);border-radius:12px;padding:1.2rem;border:1px solid rgba(10,58,64,0.04);box-shadow:0 10px 30px rgba(10,58,64,0.04);color:var(--azul-petroleo)}
     .section-title{font-family:"Cinzel", serif;font-size:1.35rem;margin-bottom:1rem;color:var(--azul-petroleo)}
-
-    /* Profile block with image P2 */
-    .profile{
-      display:flex;gap:1rem;align-items:center;
-      background:linear-gradient(180deg,var(--marfim),#fbf7f2);padding:1rem;border-radius:12px;
-      border:1px solid rgba(10,58,64,0.03)
-    }
+    .profile{display:flex;gap:1rem;align-items:center;background:linear-gradient(180deg,var(--marfim),#fbf7f2);padding:1rem;border-radius:12px;border:1px solid rgba(10,58,64,0.03)}
     .profile img{width:100px;height:100px;border-radius:12px;object-fit:cover;flex-shrink:0}
     .profile .meta{font-size:0.95rem}
     .profile .meta strong{display:block;color:var(--azul-petroleo);font-weight:700}
-
-    /* FAQ */
     .faq-item{margin-bottom:0.8rem}
     .faq-pergunta{font-weight:700;color:var(--azul-petroleo);margin-bottom:0.2rem}
-
-    /* Chamada final */
     .cta-wrap{background:linear-gradient(180deg,var(--azul-petroleo), rgba(10,58,64,0.98));color:var(--marfim);padding:1.6rem;border-radius:14px;text-align:center;box-shadow:0 20px 50px rgba(10,58,64,0.22)}
     .cta-wrap h3{font-family:"Cinzel",serif;margin:0 0 0.6rem 0;font-size:1.35rem}
     .cta-wrap p{margin:0 0 1rem 0;color:rgba(237,229,214,0.95)}
-
     footer{padding:1.6rem 0;text-align:center;color:rgba(10,58,64,0.6);font-size:0.9rem}
 
-    /* Small screens */
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr;gap:1rem}
       .hero{padding-top:1.2rem;margin-top:0}
@@ -228,20 +116,16 @@
       .hero-card{order:3}
       .hero-media{order:2;margin-top:0.8rem}
     }
-
     @media (max-width:460px){
       .brand h1{font-size:1rem}
       .hero-left h2{font-size:1.45rem}
       .hero-left p.lead{font-size:0.98rem}
       .btn{font-size:0.92rem;padding:0.7rem 0.9rem}
     }
-
-    /* minor helpers */
     .muted{color:rgba(10,58,64,0.6)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
   </style>
 
-  <!-- JSON-LD (Schema.org) para SEO - Physician -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -266,7 +150,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container topo">
       <div class="brand" aria-label="Marca e nome do médico">
@@ -279,7 +162,6 @@
 
       <div class="header-actions" role="navigation" aria-label="Ações de contato">
         <a class="contact-pill" href="https://wa.me/5555999070106" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">
-          <!-- WhatsApp icon inline (SVG) -->
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.99.52 3.85 1.42 5.47L2 22l4.7-1.41A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Z" fill="currentColor" opacity=".08"/><path d="M17.5 14.6c-.3-.15-1.76-.86-2.04-.96-.28-.1-.48-.14-.68.14-.2.28-.76.96-.93 1.16-.17.2-.35.22-.65.07-1.77-.83-2.93-1.66-4.11-3.77-.31-.53.31-.49.9-1.62.1-.25.05-.46-.02-.63-.07-.16-.68-1.63-.93-2.22-.25-.58-.51-.5-.7-.51-.18-.01-.39-.01-.6-.01-.2 0-.52.07-.79.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.08 4.5 3 1.3 3.03 1 3.57.93.54-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.08-.13-.29-.2-.6-.35Z" fill="currentColor"/></svg>
           <span>WhatsApp</span>
         </a>
@@ -289,7 +171,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-left">
@@ -307,19 +188,18 @@
             <a class="btn btn-secondary" href="https://wa.me/5555999070106" rel="noopener noreferrer">Falar no WhatsApp</a>
           </div>
 
-          <!-- small trust / microcopy -->
           <p style="margin-top:0.8rem;font-size:0.92rem" class="muted">Atendimento ético, confidencial e por profissionais registrados conforme legislação vigente.</p>
         </div>
 
-        <!-- Right column: hero media and card -->
         <div style="display:flex;flex-direction:column;gap:1rem">
-          <!-- HERO IMAGE: P1 (responsive using picture with PNG sources) -->
+          <!-- HERO IMAGE: usando img + srcset (PNG) -->
           <div class="hero-media" aria-hidden="false">
-            <picture>
-              <!-- responsive widths (PNGs) -->
-              <source type="image/png" srcset="img/p1.png 480w, img/p1-800.png 800w, img/p1-1200.png 1200w" sizes="(max-width:980px) 100vw, 420px">
-              <img src="img/p1.png" alt="Atendimento médico por teleconsulta — Dr. Sandro Pereira" width="1200" height="800" loading="lazy" style="width:100%;height:auto;display:block">
-            </picture>
+            <img
+              src="img/p1-800.png"
+              srcset="img/p1-480.png 480w, img/p1-800.png 800w, img/p1-1200.png 1200w"
+              sizes="(max-width:980px) 100vw, 420px"
+              alt="Atendimento médico por teleconsulta — Dr. Sandro Pereira"
+              width="1200" height="800" loading="lazy" style="width:100%;height:auto;display:block">
           </div>
 
           <aside class="hero-card" aria-label="Como posso ajudar">
@@ -333,7 +213,6 @@
       </div>
     </section>
 
-    <!-- SOBRE + PERFIL -->
     <section class="container">
       <div class="grid-2" style="align-items:start">
         <div>
@@ -348,11 +227,12 @@
         <div>
           <!-- Perfil com foto P2 -->
           <div class="profile" role="region" aria-labelledby="perfil-title">
-            <picture>
-              <source type="image/png" srcset="img/p2-200.png 200w, img/p2-400.png 400w" sizes="(max-width:980px) 100vw, 100px">
-              <img src="img/p2-400.png" alt="Foto do Dr. Sandro Pereira" width="400" height="400" loading="lazy">
-            </picture>
-
+            <img
+              src="img/p2-400.png"
+              srcset="img/p2-200.png 200w, img/p2-400.png 400w"
+              sizes="(max-width:980px) 100vw, 100px"
+              alt="Foto do Dr. Sandro Pereira"
+              width="400" height="400" loading="lazy">
             <div class="meta" id="perfil-title">
               <strong>Dr. Sandro Norberto da Silva Pereira Junior</strong>
               <span class="muted">CRM/RS 61741</span>
@@ -360,7 +240,6 @@
             </div>
           </div>
 
-          <!-- quick info card -->
           <div style="margin-top:1rem" class="card">
             <h4 style="margin-top:0">Atendimento</h4>
             <ul style="margin:0;padding-left:1rem;font-size:0.95rem;color:var(--azul-petroleo)">
@@ -373,7 +252,6 @@
       </div>
     </section>
 
-    <!-- BENEFÍCIOS -->
     <section class="container">
       <h3 class="section-title">Por que escolher este cuidado?</h3>
       <div class="grid-2">
@@ -394,7 +272,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="container">
       <h3 class="section-title">Perguntas frequentes</h3>
       <div class="card" aria-live="polite">
@@ -413,7 +290,6 @@
       </div>
     </section>
 
-    <!-- CHAMADA FINAL -->
     <section class="container" style="margin-bottom:1.6rem">
       <div class="cta-wrap">
         <h3>Um cuidado mais próximo — mesmo de longe</h3>
@@ -434,13 +310,8 @@
   </footer>
 
   <script>
-    // ano dinâmico
     document.getElementById('ano').textContent = new Date().getFullYear();
-
-    // Lightweight accessibility enhancement: handle "skip to content" if needed (placeholder)
-    (function(){/* reserved for small inline JS improvements */})();
   </script>
 
 </body>
 </html>
-
