@@ -11,13 +11,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dr. Sandro Pereira — Cuidado Inteligente" />
   <meta property="og:description" content="Consulta médica online especializada em dor. Atendimento humano e baseado em evidências." />
-  <meta property="og:image" content="img/P1.png" />
+  <meta property="og:image" content="https://seusite.com/img/p1-800.png" />
   <meta property="og:url" content="https://seusite.com/" />
   <meta property="og:site_name" content="Cuidado Inteligente - Dr. Sandro Pereira" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dr. Sandro Pereira — Cuidado Inteligente" />
   <meta name="twitter:description" content="Consulta médica online especializada em dor." />
-  <meta name="twitter:image" content="img/P1.png" />
+  <meta name="twitter:image" content="https://seusite.com/img/p1-800.png" />
 
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -249,7 +249,7 @@
     "name": "Dr. Sandro Pereira",
     "description": "Consulta médica online especializada em dor crônica e aguda. Atendimento por teleconsulta, avaliações e acompanhamento.",
     "url": "https://seusite.com/",
-    "image": "https://seusite.com/assets/p2.jpg",
+    "image": "https://seusite.com/img/p2-400.png",
     "telephone": "+55-98-4176109",
     "medicalSpecialty": "PainManagement",
     "address": {
@@ -313,13 +313,12 @@
 
         <!-- Right column: hero media and card -->
         <div style="display:flex;flex-direction:column;gap:1rem">
-          <!-- HERO IMAGE: P1 (responsive using picture + webp) -->
+          <!-- HERO IMAGE: P1 (responsive using picture with PNG sources) -->
           <div class="hero-media" aria-hidden="false">
             <picture>
-              <!-- responsive widths -->
-              <source type="image/png" srcset="assets/img/p1-480w.png 480w, assets/img/p1-800.png 800w, assets/img/p1-1200.png 1200w" sizes="(max-width:980px) 100vw, 420px">
-              <source type="image/png" srcset="assets/img/p1-480w.png 480w, assets/img/p1-800.png 800w, assets/img/p1-1200.png 1200w" sizes="(max-width:980px) 100vw, 420px">
-              <img src="assets/p1-800.png" alt="Atendimento médico por teleconsulta — Dr. Sandro Pereira" width="1200" height="800" loading="lazy" style="width:100%;height:auto;display:block">
+              <!-- responsive widths (PNGs) -->
+              <source type="image/png" srcset="img/p1-480.png 480w, img/p1-800.png 800w, img/p1-1200.png 1200w" sizes="(max-width:980px) 100vw, 420px">
+              <img src="img/p1-800.png" alt="Atendimento médico por teleconsulta — Dr. Sandro Pereira" width="1200" height="800" loading="lazy" style="width:100%;height:auto;display:block">
             </picture>
           </div>
 
@@ -341,10 +340,8 @@
           <h3 class="section-title">Sobre o médico</h3>
           <p>
             Sou o <strong>Dr. Sandro Pereira</strong>, médico com atuação na área da saúde desde 2023.
-            Graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Objetivo de oferecer um cuidado inteligente: Sua história, junto com exames, pode chegar de forma clara o que está acontecendo e construir juntos um plano de tratamento realista, seguro e possível.
-          </p>
-          <p style="margin-top:0.7rem">
-            Meu método é combinar evidência com cuidado humano: ouvir, explicar com clareza e construir um plano de tratamento realista e seguro.
+            Graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica.
+            Objetivo de oferecer um cuidado inteligente: Sua história, junto com exames, pode chegar de forma clara o que está acontecendo e construir juntos um plano de tratamento realista, seguro e possível.
           </p>
         </div>
 
@@ -352,9 +349,8 @@
           <!-- Perfil com foto P2 -->
           <div class="profile" role="region" aria-labelledby="perfil-title">
             <picture>
-              <source type="image/png" srcset="img/P2.png 200w, img/P2-400w.png 400w" sizes="(max-width:980px) 100vw, 100px">
-              <source type="image/png" srcset="assets/img/p2-200w.png 200w, assets/img/p2-400w.png 400w" sizes="(max-width:980px) 100vw, 100px">
-              <img src="img/P2.png" alt="Foto do Dr. Sandro Pereira" width="400" height="400" loading="lazy">
+              <source type="image/png" srcset="img/p2-200.png 200w, img/p2-400.png 400w" sizes="(max-width:980px) 100vw, 100px">
+              <img src="img/p2-400.png" alt="Foto do Dr. Sandro Pereira" width="400" height="400" loading="lazy">
             </picture>
 
             <div class="meta" id="perfil-title">
@@ -447,12 +443,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
