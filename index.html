@@ -56,10 +56,8 @@
     .row > div{flex:1}
     .note-success{background:#e6ffef;border:1px solid #9eedc0;padding:10px;border-radius:8px;color:#0a6b3d;margin-top:12px}
     .note-error{background:#ffecec;border:1px solid #ffb3b3;padding:10px;border-radius:8px;color:#7a1a1a;margin-top:12px}
-    .preview{white-space:pre-wrap;background:#f7f9f9;border:1px dashed #e0e8e8;padding:10px;border-radius:8px;color:#102a2a;margin-top:8px}
     .actions-inline{display:flex;gap:8px;margin-top:8px}
-    .whatsapp-btn{background:#25D366;color:#002b2b;padding:10px 12px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
-    .copy-btn{background:#0f4b4d;color:#fff;padding:10px 12px;border-radius:10px;border:none;cursor:pointer}
+    .whatsapp-btn{background:var(--gold);color:var(--petrol);padding:10px 12px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
     @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
   </style>
 </head>
@@ -117,16 +115,10 @@
           <textarea id="mensagem" name="mensagem" rows="3" placeholder="Breve descrição (opcional)"></textarea>
 
           <div class="actions-inline" style="align-items:center;">
-            <button id="waBtn" type="submit" class="whatsapp-btn" aria-label="Enviar via WhatsApp">📩 Solicitar Agendamento (WhatsApp)</button>
-            <button id="copyBtn" type="button" class="copy-btn" aria-label="Copiar mensagem">📋 Copiar mensagem</button>
+            <button id="waBtn" type="submit" class="whatsapp-btn" aria-label="Enviar via WhatsApp">Solicitar Agendamento</button>
           </div>
 
           <div id="form-notice" role="status" aria-live="polite"></div>
-
-          <div style="margin-top:12px">
-            <strong>Pré-visualização da mensagem:</strong>
-            <div id="preview" class="preview" aria-hidden="false">(A mensagem será exibida aqui quando preencher o formulário)</div>
-          </div>
         </form>
 
         <div style="margin-top:12px;font-size:13px;color:var(--gold)">
@@ -155,10 +147,8 @@
     (function(){
       const WHATSAPP_NUMBER = '55999070106'; // destino sem + ou espaços
       const form = document.getElementById('form-agenda');
-      const preview = document.getElementById('preview');
       const notice = document.getElementById('form-notice');
       const waBtn = document.getElementById('waBtn');
-      const copyBtn = document.getElementById('copyBtn');
 
       function setNotice(type, text){
         notice.innerHTML = '';
@@ -169,7 +159,6 @@
       }
 
       function formatMessage(fields){
-        // Monta mensagem com quebras e formatação para WhatsApp
         const lines = [
           '📅 *Pedido de Agendamento*',
           '--------------------------------',
@@ -188,13 +177,7 @@
       }
 
       function encodeForWhatsApp(text){
-        // encodeURIComponent, preservando quebras (%0A já geradas por encodeURIComponent)
         return encodeURIComponent(text).replace(/%20/g, '+');
-      }
-
-      function updatePreview(){
-        const fields = getFields();
-        preview.textContent = formatMessage(fields);
       }
 
       function getFields(){
@@ -208,27 +191,17 @@
         };
       }
 
-      // Atualiza preview ao digitar
-      ['nome','email','telefone','data','hora','mensagem'].forEach(id=>{
-        const el = document.getElementById(id);
-        el.addEventListener('input', updatePreview);
-      });
-      // chamada inicial
-      updatePreview();
-
       // validar e abrir WhatsApp
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        setNotice('', ''); // limpa
+        setNotice('', '');
 
         const f = getFields();
 
-        // Validações principais
         if(!f.nome || !f.email){
           setNotice('error', 'Por favor, preencha ao menos Nome e E-mail.');
           return;
         }
-        // valida e-mail simples
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!re.test(f.email)){
           setNotice('error', 'E-mail em formato inválido.');
@@ -243,43 +216,17 @@
         const encoded = encodeForWhatsApp(message);
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
 
-        // abre em nova aba (em mobile abre app)
         const win = window.open(url, '_blank');
         if(!win){
-          // Pop-up bloqueado — mostrar link direto
-          setNotice('error', 'O navegador bloqueou a abertura automática. <br>Por favor, clique neste link para abrir o WhatsApp: ' + url);
+          setNotice('error', 'O navegador bloqueou a abertura automática. Clique no link para abrir o WhatsApp: ' + url);
         } else {
           setNotice('success', 'O WhatsApp foi aberto com a mensagem. Confirme o envio no app.');
         }
-
-        // opcional: reset do form? mantenho preenchido para que o usuário confirme
-        // form.reset();
-        // updatePreview();
       });
 
-      // copiar mensagem para área de transferência
-      copyBtn.addEventListener('click', function(){
-        const f = getFields();
-        if(!f.nome || !f.email){
-          setNotice('error', 'Para copiar, preencha ao menos Nome e E-mail.');
-          return;
-        }
-        const message = formatMessage(f);
-        // usa clipboard API
-        navigator.clipboard.writeText(message).then(()=>{
-          setNotice('success', 'Mensagem copiada! Agora cole no WhatsApp.');
-        }).catch(err=>{
-          console.error('Clipboard error', err);
-          setNotice('error', 'Não foi possível copiar automaticamente. Selecione o texto na pré-visualização e copie manualmente.');
-        });
-      });
-
-      // acessibilidade: permitir envio com Enter em botões via teclado
+      // permitir enviar com Enter quando o botão estiver focado
       waBtn.addEventListener('keyup', function(e){
         if(e.key === 'Enter') waBtn.click();
-      });
-      copyBtn.addEventListener('keyup', function(e){
-        if(e.key === 'Enter') copyBtn.click();
       });
 
     })();
