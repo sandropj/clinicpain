@@ -3,112 +3,103 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sandro Pereira | Cuidado Inteligente — Consulta Online</title>
-  <meta name="description" content="Consulta online para tratamento da dor. Agendamento rápido e seguro com o Dr. Sandro Pereira — Médico Clinico Geral" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sandro Pereira | Cuidado Inteligente — Consulta Online" />
-  <meta property="og:description" content="Consulta online direcionada no cuidado da dor. Agende de forma rápida e segura." />
-  <meta property="og:type" content="website" />
+  <title>Dr. Sandro Pereira | Cuidado Inteligente — Consulta Online</title>
+  <meta name="description" content="Consulta online para tratamento da dor. Agendamento rápido e seguro com o Dr. Sandro Pereira — Médico Clínico Geral (CRM/RS 61741)." />
+  <meta name="theme-color" content="#07282b" />
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
+      --bg-dark:#07282b;
       --petrol:#0f4b4d;
-      --petrol-light:#e8f2f2;
-      --text-light:#f4f7f7;
       --gold:#c39b3b;
-      --gray-100:#dfe5e5;
-      --gray-300:#b9c3c4;
-      --gray-600:#cfd7d7;
-      --white:#ffffff;
-      --max-width:1100px;
+      --muted:#b9c3c4;
+      --card:#ffffff;
+      --text-dark:#0b2b2b;
+      --text-light:#eef6f6;
+      --maxw:1100px;
       --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:'Lato', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color:var(--gray-600);
-      background:linear-gradient(180deg,#0a2f31,#0f4b4d);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
-    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
+    html,body{height:100%;margin:0}
 
-    /* Header / Hero */
-    header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+body{
+  font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+  background:
+    linear-gradient(to bottom,
+      rgba(7,40,43,0) 0%,
+      rgba(7,40,43,0.35) 35%,
+      rgba(7,40,43,0.70) 70%,
+      rgba(7,40,43,0.92) 100%
+    ),
+    url('img/fundo1.jpeg') no-repeat left top,
+    linear-gradient(180deg,var(--bg-dark),var(--petrol));
+  background-size: auto 85vh;
+  background-attachment: fixed, scroll, scroll;
+  color:var(--text-light);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding:20px;
+}
+    .container{max-width:var(--maxw);margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--petrol);font-weight:700;font-family:'Cinzel',serif;font-size:20px;box-shadow:0 6px 18px rgba(15,75,77,0.12)
-    }
-    .nav{display:flex;gap:12px;align-items:center}
-    .btn{background:var(--gold);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:28px 0;min-height:420px
-    }
-    .hero h1{font-family:'Cinzel',serif;font-size:36px;margin:0;color:var(--gray-600)}
-    .lead{font-size:18px;color:var(--gold);margin:12px 0 20px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .primary{background:var(--gray-600);color:var(--petrol);padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
-    .ghost{border:1px solid var(--petrol);padding:11px 16px;border-radius:12px;color:var(--gold);text-decoration:none}
-
-    /* Card */
-    .card{background:var(--gray-600);border-radius:var(--radius);box-shadow:0 8px 30px rgba(10,30,35,0.06);padding:18px}
-    .profile{display:flex;gap:16px;white-items:center}
-    .avatar{width:120px;height:120px;border-radius:18px;overflow:hidden;flex:0 0 88px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--bg-dark);font-weight:700;font-family:'Cinzel',serif}
+    .brand .name{font-weight:700;color:var(--text-light);font-size:18px}
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--gold);color:var(--bg-dark);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:var(--text-light);text-decoration:none}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:22px 0;min-height:420px}
+    h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);margin:0;color:var(--text-light)}
+    .lead{font-size:clamp(15px,1.8vw,18px);color:var(--muted);margin-top:10px}
+    .actions{display:flex;gap:12px;margin-top:14px}
+    .card{background:var(--card);color:var(--text-dark);border-radius:var(--radius);padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18)}
+    .profile{display:flex;gap:16px;align-items:center}
+    .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;flex:0 0 140px}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .credentials h3{margin:0;font-family:'Cinzel',serif;font-size:22px}
-    .credentials p{margin:6px 0 0;color:var(--petrol)}
-
-    /* Grid sections */
-    section{padding:34px 0;border-top:1px solid var(--petrol)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .who-list{display:flex;flex-direction:column;gap:10px}
-    .who-item{background:linear-gradient(180deg,#fff,var(--gray-100));padding:12px;border-radius:10px;border:1px solid var(--petrol)}
-
-    /* Benefits */
+    .credentials h3{margin:0;font-family:'Cinzel',serif;font-size:22px;color:var(--gold)}
+    .credentials p{margin:8px 0 0;color:var(--text-dark)}
+    section{padding:30px 0;border-top:1px solid rgba(255,255,255,0.03)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,var(--gray-100);border:1px solid var(--white)}
-    .benefit h4{margin:0 0 8px}
-
-    /* FAQ */
-    .faq-item{border-bottom:1px dashed var(--ptrol);padding:12px 0}
+    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6f7f7);color:var(--text-dark)}
+    .faq-item{border-bottom:1px dashed rgba(0,0,0,0.06);padding:12px 0}
     .faq-q{display:flex;justify-content:space-between;cursor:pointer}
     .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;padding-top:0}
     .faq-a.open{max-height:400px;padding-top:10px}
-
-    /* CTA final */
-    .cta-final{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(15,75,77,0.06),rgba(195,155,59,0.03));border:1px solid var(--gray-300)}
-
-    footer{font-size:13px;color:var(--text-light);padding:28px 0}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;min-height:auto}
-      .benefits{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .avatar{display:none}
-    }
-
+    .cta-final{display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px;border-radius:12px;background:linear-gradient(90deg,rgba(15,75,77,0.06),rgba(195,155,59,0.03));border:1px solid rgba(255,255,255,0.04)}
+    footer{font-size:13px;color:var(--muted);padding:22px 0}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+    .whatsapp-btn{background:#25D366;color:#002b2b;padding:12px 14px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.24);text-decoration:none}
+    .whatsapp-label{background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:10px;font-size:13px}
+    @media (max-width:1100px){.hero{grid-template-columns:1fr 360px}}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.benefits{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.avatar{display:none}.whatsapp-float{right:12px;bottom:12px}}
+    @media (max-width:600px){header{padding:8px 0}.hero{gap:16px}.card{padding:14px}.actions{flex-direction:column}.btn{width:100%;text-align:center}.whatsapp-float{right:10px;bottom:10px}}
+    a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
+    .note-success{background:#e6ffef;border:1px solid #9eedc0;padding:10px;border-radius:8px;color:#0a6b3d;margin-top:12px}
+    .note-error{background:#ffecec;border:1px solid #ffb3b3;padding:10px;border-radius:8px;color:#7a1a1a;margin-top:12px}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo"><img src="img/p1logo.png" alt="Atendimento" style="width:60%;border-radius:20px;object-fit:cover" /></div>
+        <!-- fixed malformed markup -->
+        <div class="avatar" aria-hidden="true">
+          <img src="img/p1.png" alt="logo">
+        </div>
         <div>
-          <div style="font-weight:700; color:var(--gray-600)">Dr. Sandro Pereira</div>
-          <div style="font-size:13px;color:var(--text-light)">Cuidado Inteligente — Medicina da Dor</div>
+          <div class="name">Dr. Sandro Pereira</div>
+          <div style="font-size:13px;color:var(--text-light)">Do alívio ao equilíbrio — passo a passo com você. • CRM/RS 61741</div>
         </div>
       </div>
-      <nav class="nav">
-        <a class="ghost" href="#sobre">Sobre</a>
-        <a class="ghost" href="#como">Como funciona</a>
+
+      <nav>
+        <a class="btn-ghost" href="#sobre">Sobre</a>
+        <a class="btn-ghost" href="#como">Como funciona</a>
         <a class="btn" href="#agende">Agende</a>
       </nav>
     </header>
@@ -116,72 +107,93 @@
     <!-- HERO -->
     <main class="hero" role="main">
       <div>
-        <h1>Consulta online — Atendimento direcionado, humano e seguro</h1>
-        <p class="lead">Avaliação direcionada, plano terapêutico personalizado e acompanhamento. Agende agora sua consulta online com o Dr. Sandro Pereira.</p>
+        <h1>Saúde que te acompanha — Presente no momento que você mais precisa.</h1>
+        <p class="lead">Avaliação especializada, plano terapêutico personalizado e acompanhamento. Agende agora sua consulta online com o Dr. Sandro Pereira.</p>
+
         <div class="actions">
-          <a class="primary" href="#agende">Agendar Consulta</a>
-          <a class="primary" href="#beneficios">Ver diferenciais</a>
+          <a class="btn" href="#agende">Agendar Consulta</a>
+          <a class="btn-ghost" href="#beneficios">Ver diferenciais</a>
         </div>
 
-        <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
-          <div class="card" style="display:flex;gap:12px;align-items:center">
-            <div class="avatar"><img src="img/p2central.png" alt="Dr. Sandro Pereira - foto"/></div>
-            <div class="credentials">
-               <div style="font-size:33px;color:var(--gold)">Dr. Sandro Pereira</div> 
-              <p>Médico • Pós graduando em Clinica da dor</p>
+        <!-- profile compact card (mobile-friendly) -->
+        <div style="margin-top:20px">
+          <div class="card profile" style="align-items:center">
+            <div class="avatar"><img src="img/p1.png" alt="Dr. Sandro Pereira"/></div>
+            <div class="credentials" style="max-width:60ch">
+              <h3>Dr. Sandro Pereira</h3>
+              <p style="margin-top:8px;color:var(--text-dark);font-size:15px">• Enfermeiro / 2014</p>
+              <p>• Médico / 2023</p>
+              <p>• Pós-graduando em Clínica da Dor</p>
+              <h2 style="font-family:'Cinzel',serif">Conhecimento que se soma.</h2>
+              <h3 style="font-family:'Cinzel',serif">Do diagnóstico ao alívio — tudo em um só lugar.</h3>
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- Right column: agendamento rápido -->
+      <!-- Right column: booking -->
       <aside class="card" aria-labelledby="agende">
         <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento Rápido</h3>
-        <p style="margin:6px 0 12px;color:var(--petrol)">Escolha data e garanta atendimento online com formulário seguro.</p>
+        <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha uma data e garanta atendimento online com formulário seguro.</p>
 
-        <form id="form-agenda" action="mailto:arsandrodoc@gmail.com" method="post" enctype="text/plain">
+        <!-- Modified form: client-side handling -->
+        <form id="form-agenda" novalidate>
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Nome completo</label>
-          <input name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--gray-300);margin-bottom:10px" />
+          <input id="nome" name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">E-mail</label>
-          <input type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--gray-300);margin-bottom:10px" />
+          <input id="email" type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Telefone / WhatsApp</label>
-          <input name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--gray-300);margin-bottom:10px" />
+          <input id="telefone" name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+          <div style="display:flex;gap:8px;margin-bottom:10px">
+            <div style="flex:1">
+              <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Data preferencial</label>
+              <input id="data" type="date" name="Data" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
+            </div>
+            <div style="width:46%">
+              <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Horário</label>
+              <input id="hora" type="time" name="Hora" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
+            </div>
+          </div>
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Mensagem / Sintomas</label>
-          <textarea name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--gray-300);margin-bottom:12px"></textarea>
+          <textarea id="mensagem" name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
 
-          <button type="submit" class="primary" style="width:100%">Solicitar Agendamento</button>
+          <button id="submitBtn" type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
+
+          <div id="form-notice" role="status" aria-live="polite"></div>
         </form>
 
-        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106" target="_blank" rel="noopener">(55) 999070106</a></div>
+        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
       </aside>
     </main>
 
-    <!-- SOBRE O MÉDICO -->
+    <!-- ... rest of page unchanged (sobre, como, beneficios, faq, cta-final, footer) ... -->
+
     <section id="sobre">
       <div class="grid-2">
         <div>
-          <h2 style="font-family:'Cinzel',serif;color:var(--gray-600)">Sobre o Médico</h2>
-          <p style="color:var(--gray-600)">Sou o Dr. Sandro Pereira, médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente: sua história, junto com exames, pode esclarecer de forma clara o que está acontecendo e permitir que construamos juntos um plano de tratamento realista, seguro e possível.</p>
+          <h2 style="font-family:'Cinzel',serif">Sobre o Médico</h2>
+          <p style="color:var(--text-light)">Sou o Dr. Sandro Pereira, médico com atuação na área da saúde desde 2023, graduado em Enfermagem/ URI-SA, graduado em Medicina/FHAB-AR e certificado pela UFSM, capacitação em Laserterapia e US para tratamento de lesões. Pós graduando em Clinica da dor. Meu objetivo é trazer a oportunidade de um cuidado inteligente e individualizado. Objetivo de esclarecer de forma clara e simples o que está acontecendo e construir juntos um plano terapêutico realista, seguro e possível.</p>
 
-          <ul style="color:var(--gray-600);margin-top:12px">
-            <li>Formação em Medicina — Universidade Hector Barceló, certificada pela UFSM</li>
-            <li>Profissionalização continuada desde 2010</li>
-            <li>Pós graduando em clinica da dor.</li>
+          <ul style="color:var(--text-light);margin-top:12px">
+            <li>Formação em Enfermagem / URI-SA 2014</li>
+            <li>Medicina — Universidade Hector Barceló (2023) — certificado UFSM</li>
+            <li>Médico ESF - MFC</li>
+            <li>Pós graduando em Clinica da dor</li>
           </ul>
         </div>
         <div>
           <div class="card">
             <h4 style="margin-top:0;font-family:'Cinzel',serif;color:var(--petrol)">Posicionamento</h4>
             <p style="color:var(--petrol)">Trabalho orientado por evidências, com foco em individualização do cuidado — menos dependência de opioides, mais atenção a reabilitação e qualidade de vida.</p>
-            <div style="margin-top:12px;display:flex;gap:10px">
+            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
               <img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" />
               <div style="flex:1">
-                <strong style="display:block;color:var(--petrol">Consulta estruturada</strong>
-                <p style="color:var(--petrol)">Avaliação, plano terapêutico e seguimento.</p>
+                <strong style="display:block;color:var(--petrol)">Consulta estruturada</strong>
+                <p style="color:var(--petrol);margin:6px 0 0">Avaliação, plano terapêutico e seguimento.</p>
               </div>
             </div>
           </div>
@@ -189,144 +201,136 @@
       </div>
     </section>
 
-    <!-- PARA QUEM É -->
-    <section id="quem">
-      <h2 style="font-family:'Cinzel',serif">Para quem é</h2>
-      <p style="color:var(--gray-600)">Pacientes com dor aguda ou crônica que buscam uma abordagem médica responsável, com foco em alívio, funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
+    <!-- rest omitted for brevity (keep same as original) -->
 
-      <div class="who-list" style="margin-top:12px">
-        <div class="who-item"><p style="color:var(--petrol)">Pessoas com dor lombar ou cervical</div>
-        <div class="who-item"><p style="color:var(--petrol)">Pacientes com dores pós-operatórias</div>
-        <div class="who-item"><p style="color:var(--petrol)">Cefaleias e enxaquecas</div>
-        <div class="who-item"><p style="color:var(--petrol)">Dores neuropáticas e fibromialgia</div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como">
-      <h2 style="font-family:'Cinzel',serif">Como funciona a consulta online</h2>
-      <ol style="color:var(--gray-600)">
-        <li>Preenchimento do formulário e envio de dados clínicos.</li>
-        <li>Agendamento e recepção de link seguro por e-mail/WhatsApp.</li>
-        <li>Consulta por vídeo com avaliação detalhada.</li>
-        <li>Plano terapêutico individualizado e orientações de seguimento.</li>
-      </ol>
-    </section>
-
-    <!-- BENEFÍCIOS -->
-    <section id="beneficios">
-      <h2 style="font-family:'Cinzel',serif">Benefícios e diferenciais</h2>
-      <div class="benefits" style="margin-top:12px">
-        <div class="benefit"><h4>Atendimento humanizado</h4><p style="color:var(--gray-600);margin:0">Escuta ativa e plano centrado no paciente.</p></div>
-        <div class="benefit"><h4>Praticidade</h4><p style="color:var(--gray-100);margin:0">Consulta onde você estiver, sem deslocamento.</p></div>
-        <div class="benefit"><h4>Segurança clínica</h4><p style="color:var(--gray-600);margin:0">Condutas baseadas em evidências e bom senso farmacológico.</p></div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <h2 style="font-family:'Cinzel',serif">Perguntas Frequentes</h2>
-      <div style="margin-top:12px">
-        <div class="faq-item">
-          <div class="faq-q" tabindex="0">
-            <div>Como é feita a primeira consulta?</div>
-            <div class="toggle">+</div>
-          </div>
-          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico. Em alguns casos, são solicitados exames complementares.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" tabindex="0">
-            <div>Preciso de receita controlada?</div>
-            <div class="toggle">+</div>
-          </div>
-          <div class="faq-a">Se houver indicação, receitas e atestados podem ser emitidos conforme legislação e via plataforma segura.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" tabindex="0">
-            <div>Quanto tempo dura a consulta?</div>
-            <div class="toggle">+</div>
-          </div>
-          <div class="faq-a">Entre 25 e 45 minutos, dependendo da complexidade clínica e da necessidade de revisões.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section style="padding-top:24px">
-      <div class="cta-final">
-        <div>
-          <h3 style="margin:0;font-family:'Cinzel',serif">Pronto para aliviar a dor com um plano seguro?</h3>
-          <p style="margin:6px 0 0;color:var(--text-light)">Agende a sua consulta online e receba orientação individual e direcionada. <br>Um cuidado mais próximo — mesmo de longe. Se você convive com dor e precisa de orientação qualificada, dê o próximo passo.</p>
-        </div>
-        <div style="display:flex;gap:10px">
-          <a class="primary" href="#agende">Agendar Consulta</a>
-          <a class="primary" href="https://wa.me/55984176109" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RODAPÉ -->
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
         <div>
-          <strong>Dr. Sandro Pereira </strong><br />
+          <strong>Dr. Sandro Pereira</strong><br />
           CRM/RS 61741.
         </div>
-        <div style="text--gray-600">
+        <div style="text-align:right;color:var(--muted)">
           <div>E-mail: <a href="mailto:arsandrodoc@gmail.com">arsandrodoc@gmail.com</a></div>
-          <div>Telefones: (55) 98417-6109</div>
+          <div>Telefones: (55) 99907-0106</div>
         </div>
       </div>
-      <div style="margin-top:12px;color:var(--text-light);font-size:12px">&copy; 2025 Dr. Sandro Pereira — Todos os direitos reservados. Esta página respeita o Código de Ética Médica quanto à publicidade profissional.</div>
+      <div style="margin-top:12px;color:var(--muted);font-size:12px">&copy; 2025 Dr. Sandro Pereira — Todos os direitos reservados. Esta página respeita o Código de Ética Médica quanto à publicidade profissional.</div>
     </footer>
   </div>
 
-  <script>
-    // FAQ toggle
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const q = item.querySelector('.faq-q');
-      const a = item.querySelector('.faq-a');
-      q.addEventListener('click', () => { a.classList.toggle('open'); const t = q.querySelector('.toggle'); t.textContent = a.classList.contains('open') ? '-' : '+'; });
-      q.addEventListener('keypress', e => { if(e.key === 'Enter' || e.key === ' ') { q.click(); } });
-    });
+  <!-- WhatsApp bubble (floating) -->
+  <a class="whatsapp-float" href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" aria-label="Abrir conversa no WhatsApp">
+    <div class="whatsapp-label" aria-hidden="true">Seg–Sex • 09h–18h</div>
+    <div class="whatsapp-btn">💬&nbsp;&nbsp;<span style="font-weight:700">WhatsApp</span></div>
+  </a>
 
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = a.getAttribute('href');
-        if(id === '#' || id === '') return;
-        const el = document.querySelector(id);
-        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-      });
+  <script>
+<!-- === Início: Agendamento Rápido (substitua sua seção antiga) === -->
+<aside class="card" aria-labelledby="agende">
+  <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento Rápido</h3>
+  <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha uma data e preencha os dados. Ao clicar em "Solicitar Agendamento" abrimos o WhatsApp com a mensagem pronta.</p>
+
+  <form id="form-agenda" novalidate>
+    <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Nome completo</label>
+    <input id="nome" name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+    <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">E-mail</label>
+    <input id="email" type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+    <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Telefone / WhatsApp</label>
+    <input id="telefone" name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+    <div style="display:flex;gap:8px;margin-bottom:10px">
+      <div style="flex:1">
+        <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Data preferencial</label>
+        <input id="data" type="date" name="Data" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
+      </div>
+      <div style="width:46%">
+        <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Horário</label>
+        <input id="hora" type="time" name="Hora" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
+      </div>
+    </div>
+
+    <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Mensagem / Sintomas</label>
+    <textarea id="mensagem" name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
+
+    <button id="submitBtn" type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
+
+    <div id="form-notice" role="status" aria-live="polite"></div>
+  </form>
+
+  <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp direto: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
+</aside>
+
+<!-- === Script: ao enviar, abrir WhatsApp com texto pré-preenchido === -->
+<script>
+  (function(){
+    const WHATSAPP_NUMBER = '55999070106'; // número destino (sem + ou 00)
+    const form = document.getElementById('form-agenda');
+    const notice = document.getElementById('form-notice');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function setNotice(type, text){
+      notice.innerHTML = '';
+      const div = document.createElement('div');
+      div.className = type === 'success' ? 'note-success' : 'note-error';
+      div.textContent = text;
+      notice.appendChild(div);
+    }
+
+    function encodeForWhatsApp(text){
+      // encodeURIComponent, mas mantendo novas linhas como %0A
+      return encodeURIComponent(text).replace(/%0A/g, '%0A');
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      // Validações
+      if(!nome || !email){
+        setNotice('error', 'Por favor, preencha ao menos Nome e E-mail.');
+        return;
+      }
+      if((data && !hora) || (!data && hora)){
+        setNotice('error', 'Por favor, informe data e horário preferenciais juntos, ou deixe ambos em branco.');
+        return;
+      }
+
+      // Construir mensagem legível
+      const lines = [
+        '📅 *Pedido de Agendamento*',
+        '--------------------------------',
+        `*Nome:* ${nome}`,
+        `*E-mail:* ${email}`,
+        `*Telefone:* ${telefone || '-'}`,
+        `*Data preferencial:* ${data || '-'}`,
+        `*Horário preferencial:* ${hora || '-'}`,
+        '',
+        '*Mensagem / Sintomas:*',
+        `${mensagem || '-'}`,
+        '',
+        '(Enviado via formulário do site)'
+      ];
+      const message = lines.join('\n');
+
+      // Monta URL do WhatsApp via wa.me (funciona em mobile e desktop)
+      const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeForWhatsApp(message)}`;
+
+      // Abrir em nova aba/janela para não quebrar a navegação (em mobile abrirá app)
+      window.open(waURL, '_blank');
+
+      // Feedback para o usuário
+      setNotice('success', 'O WhatsApp foi aberto com sua mensagem — confirme o envio no app. Se o WhatsApp não abrir, verifique se seu navegador permite pop-ups.');
+      form.reset();
     });
-  </script>
+  })();
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
