@@ -23,72 +23,62 @@
       --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{
-  height:100%;
-  margin:0;
-  background-color:#607b68; /* cor base para qualquer área transparente */
-}}
+    html,body{height:100%;margin:0}
 
+    /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
+position:relative;
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-
-  /* Camadas de fundo: gradientes + fotos + cor base */
-  background-image:
-    /* gradiente que ofusca a imagem do topo ao descer */
-    linear-gradient(to bottom,
-      rgba(7,40,43,0) 0%,
-      rgba(7,40,43,0.35) 35%,
-      rgba(7,40,43,0.70) 70%,
-      rgba(7,40,43,0.95) 100%
-    ),
-    /* gradiente que ofusca a imagem do rodapé ao subir */
-    linear-gradient(to top,
-      rgba(7,40,43,0) 0%,
-      rgba(7,40,43,0.35) 35%,
-      rgba(7,40,43,0.70) 70%,
-      rgba(7,40,43,0.95) 100%
-    ),
-    /* foto do topo à esquerda */
-    url('img/fundo1.jpeg'),
-    /* foto do final da página embaixo à direita */
-    url('img/down.png'),
-    /* cor de base da página inteira */
-    linear-gradient(#607b68,#607b68);
-
-  background-position:
-    left top,      /* gradiente topo */
-    right bottom,  /* gradiente rodapé */
-    left top,      /* imagem topo */
-    right bottom,  /* imagem rodapé */
-    center;        /* cor base */
-
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat;
-
-  background-size:
-    100% 60vh,   /* faixa de atuação do gradiente do topo */
-    100% 60vh,   /* faixa de atuação do gradiente do rodapé */
-    auto 85vh,   /* tamanho da imagem de topo */
-    auto 60vh,   /* tamanho da imagem de rodapé */
-    cover;       /* cor base cobrindo tudo */
-
-  /* Mantém as imagens e gradientes sempre preenchendo a viewport */
-  background-attachment:
-    fixed,  /* gradiente topo */
-    fixed,  /* gradiente rodapé */
-    fixed,  /* imagem topo */
-    fixed,  /* imagem rodapé */
-    scroll; /* cor base acompanha o conteúdo */
-
+  background-color:#607b68; /* garante verde em toda a rolagem */
   color:var(--text-light);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
   padding:20px;
+}
+
+/* FOTO DO TOPO ESQUERDO COM OFUSCAMENTO AO DESCER */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(to bottom,
+      rgba(7,40,43,0) 0%,
+      rgba(7,40,43,0.35) 40%,
+      rgba(7,40,43,0.70) 75%,
+      rgba(7,40,43,0.96) 100%
+    ),
+    url("img/fundo1.jpeg");
+
+  background-repeat:no-repeat,no-repeat;
+  background-position:left top,left top;
+  background-size:100% 80vh,auto 80vh;
+}
+
+/* FOTO DO RODAPÉ DIREITO COM OFUSCAMENTO AO SUBIR */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(to top,
+      rgba(7,40,43,0) 0%,
+      rgba(7,40,43,0.35) 40%,
+      rgba(7,40,43,0.70) 75%,
+      rgba(7,40,43,0.96) 100%
+    ),
+    url("img/down.png");
+
+  background-repeat:no-repeat,no-repeat;
+  background-position:right bottom,right bottom;
+  background-size:100% 70vh,auto 70vh;
 }
     .container{max-width:var(--maxw);margin:0 auto}
     header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
@@ -341,4 +331,3 @@ body{
   </script>
 </body>
 </html>
-
