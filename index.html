@@ -23,40 +23,44 @@
       --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0}
+    html,body{
+  height:100%;
+  margin:0;
+  background-color:#607b68; /* cor base para qualquer área transparente */
+}}
 
 body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
 
-  /* Camadas de imagem e gradientes */
+  /* Camadas de fundo: gradientes + fotos + cor base */
   background-image:
-    /* gradiente que escurece de cima para baixo (foto do topo) */
+    /* gradiente que ofusca a imagem do topo ao descer */
     linear-gradient(to bottom,
       rgba(7,40,43,0) 0%,
       rgba(7,40,43,0.35) 35%,
       rgba(7,40,43,0.70) 70%,
-      rgba(7,40,43,0.92) 100%
+      rgba(7,40,43,0.95) 100%
     ),
-    /* gradiente que escurece de baixo para cima (foto do rodapé) */
+    /* gradiente que ofusca a imagem do rodapé ao subir */
     linear-gradient(to top,
       rgba(7,40,43,0) 0%,
       rgba(7,40,43,0.35) 35%,
       rgba(7,40,43,0.70) 70%,
       rgba(7,40,43,0.95) 100%
     ),
-    /* foto no topo à esquerda */
+    /* foto do topo à esquerda */
     url('img/fundo1.jpeg'),
-    /* NOVA foto no final da página, embaixo à direita */
+    /* foto do final da página embaixo à direita */
     url('img/down.png'),
-    /* gradiente de base */
-    linear-gradient(180deg,var(--bg-dark),var(--petrol));
+    /* cor de base da página inteira */
+    linear-gradient(#607b68,#607b68);
 
   background-position:
     left top,      /* gradiente topo */
     right bottom,  /* gradiente rodapé */
-    left top,      /* imagem de topo */
-    right bottom,  /* imagem de rodapé */
-    left top;      /* gradiente base */
+    left top,      /* imagem topo */
+    right bottom,  /* imagem rodapé */
+    center;        /* cor base */
 
   background-repeat:
     no-repeat,
@@ -66,18 +70,19 @@ body{
     no-repeat;
 
   background-size:
-    100% 60vh,   /* alcance do gradiente do topo */
-    100% 60vh,   /* alcance do gradiente do rodapé */
+    100% 60vh,   /* faixa de atuação do gradiente do topo */
+    100% 60vh,   /* faixa de atuação do gradiente do rodapé */
     auto 85vh,   /* tamanho da imagem de topo */
     auto 60vh,   /* tamanho da imagem de rodapé */
-    cover;       /* gradiente base */
+    cover;       /* cor base cobrindo tudo */
 
+  /* Mantém as imagens e gradientes sempre preenchendo a viewport */
   background-attachment:
-    scroll,  /* gradiente topo */
-    scroll,  /* gradiente rodapé */
-    fixed,   /* imagem topo fixa */
-    fixed,   /* imagem rodapé fixa */
-    scroll;  /* gradiente base */
+    fixed,  /* gradiente topo */
+    fixed,  /* gradiente rodapé */
+    fixed,  /* imagem topo */
+    fixed,  /* imagem rodapé */
+    scroll; /* cor base acompanha o conteúdo */
 
   color:var(--text-light);
   -webkit-font-smoothing:antialiased;
@@ -336,3 +341,4 @@ body{
   </script>
 </body>
 </html>
+
