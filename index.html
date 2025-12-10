@@ -306,7 +306,139 @@ body{
         const el = document.querySelector(id);
         if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
       });
+      
+      (function(){
+      const WHATSAPP_NUMBER = '55999070106'; // destino sem + ou espaços
+      const form = document.getElementById('form-agenda');
+      const preview = document.getElementById('preview');
+      const notice = document.getElementById('form-notice');
+      const waBtn = document.getElementById('waBtn');
+      const copyBtn = document.getElementById('copyBtn');
+
+      function setNotice(type, text){
+        notice.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = type === 'success' ? 'note-success' : 'note-error';
+        div.textContent = text;
+        notice.appendChild(div);
+      }
+
+      function formatMessage(fields){
+        // Monta mensagem com quebras e formatação para WhatsApp
+        const lines = [
+          '📅 *Pedido de Agendamento*',
+          '--------------------------------',
+          `*Nome:* ${fields.nome}`,
+          `*E-mail:* ${fields.email}`,
+          `*Telefone:* ${fields.telefone || '-'}`,
+          `*Data preferencial:* ${fields.data || '-'}`,
+          `*Horário preferencial:* ${fields.hora || '-'}`,
+          '',
+          '*Mensagem / Sintomas:*',
+          `${fields.mensagem || '-'}`,
+          '',
+          '(Enviado via formulário do site)'
+        ];
+        return lines.join('\n');
+      }
+
+      function encodeForWhatsApp(text){
+        // encodeURIComponent, preservando quebras (%0A já geradas por encodeURIComponent)
+        return encodeURIComponent(text).replace(/%20/g, '+');
+      }
+
+      function updatePreview(){
+        const fields = getFields();
+        preview.textContent = formatMessage(fields);
+      }
+
+      function getFields(){
+        return {
+          nome: document.getElementById('nome').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          telefone: document.getElementById('telefone').value.trim(),
+          data: document.getElementById('data').value,
+          hora: document.getElementById('hora').value,
+          mensagem: document.getElementById('mensagem').value.trim()
+        };
+      }
+
+      // Atualiza preview ao digitar
+      ['nome','email','telefone','data','hora','mensagem'].forEach(id=>{
+        const el = document.getElementById(id);
+        el.addEventListener('input', updatePreview);
+      });
+      // chamada inicial
+      updatePreview();
+
+      // validar e abrir WhatsApp
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        setNotice('', ''); // limpa
+
+        const f = getFields();
+
+        // Validações principais
+        if(!f.nome || !f.email){
+          setNotice('error', 'Por favor, preencha ao menos Nome e E-mail.');
+          return;
+        }
+        // valida e-mail simples
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!re.test(f.email)){
+          setNotice('error', 'E-mail em formato inválido.');
+          return;
+        }
+        if((f.data && !f.hora) || (!f.data && f.hora)){
+          setNotice('error', 'Por favor, informe Data e Horário juntos, ou deixe ambos em branco.');
+          return;
+        }
+
+        const message = formatMessage(f);
+        const encoded = encodeForWhatsApp(message);
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+        // abre em nova aba (em mobile abre app)
+        const win = window.open(url, '_blank');
+        if(!win){
+          // Pop-up bloqueado — mostrar link direto
+          setNotice('error', 'O navegador bloqueou a abertura automática. <br>Por favor, clique neste link para abrir o WhatsApp: ' + url);
+        } else {
+          setNotice('success', 'O WhatsApp foi aberto com a mensagem. Confirme o envio no app.');
+        }
+
+        // opcional: reset do form? mantenho preenchido para que o usuário confirme
+        // form.reset();
+        // updatePreview();
+      });
+
+      // copiar mensagem para área de transferência
+      copyBtn.addEventListener('click', function(){
+        const f = getFields();
+        if(!f.nome || !f.email){
+          setNotice('error', 'Para copiar, preencha ao menos Nome e E-mail.');
+          return;
+        }
+        const message = formatMessage(f);
+        // usa clipboard API
+        navigator.clipboard.writeText(message).then(()=>{
+          setNotice('success', 'Mensagem copiada! Agora cole no WhatsApp.');
+        }).catch(err=>{
+          console.error('Clipboard error', err);
+          setNotice('error', 'Não foi possível copiar automaticamente. Selecione o texto na pré-visualização e copie manualmente.');
+        });
+      });
+
+      // acessibilidade: permitir envio com Enter em botões via teclado
+      waBtn.addEventListener('keyup', function(e){
+        if(e.key === 'Enter') waBtn.click();
+      });
+      copyBtn.addEventListener('keyup', function(e){
+        if(e.key === 'Enter') copyBtn.click();
+      });
+    })();
     });
   </script>
 </body>
 </html>
+
