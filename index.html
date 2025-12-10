@@ -136,27 +136,50 @@ body{
       </div>
 
       <!-- Right column: booking -->
-      <aside class="card" aria-labelledby="agende">
-        <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento Rápido</h3>
-        <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha uma data e garanta atendimento online com formulário seguro.</p>
+         <aside class="card" aria-labelledby="agende">
+        <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento via WhatsApp</h3>
+        <p class="small" style="margin-bottom:12px">Preencha o formulário abaixo. Ao enviar, o WhatsApp abrirá com a mensagem já preenchida para o número <strong>+55 99 9007-0106</strong>.</p>
 
-        <form id="form-agenda" action="mailto:arsandrodoc@gmail.com" method="post" enctype="text/plain">
-          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Nome completo</label>
-          <input name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+        <form id="form-agenda" novalidate>
+          <label for="nome">Nome completo *</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
 
-          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">E-mail</label>
-          <input type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+          <label for="email">E-mail *</label>
+          <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required />
 
-          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Telefone / WhatsApp</label>
-          <input name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input id="telefone" name="telefone" type="text" placeholder="(xx) xxxxx-xxxx" />
 
-          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Mensagem / Sintomas</label>
-          <textarea name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
+          <div class="row" aria-hidden="false">
+            <div>
+              <label for="data">Data preferencial</label>
+              <input id="data" name="data" type="date" />
+            </div>
+            <div>
+              <label for="hora">Horário preferencial</label>
+              <input id="hora" name="hora" type="time" />
+            </div>
+          </div>
 
-          <button type="submit" class="btn" style="width:100% <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">Solicitar Agendamento</a></button>
+          <label for="mensagem">Mensagem / Sintomas</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Breve descrição (opcional)"></textarea>
+
+          <div class="actions-inline" style="align-items:center;">
+            <button id="waBtn" type="submit" class="whatsapp-btn" aria-label="Enviar via WhatsApp">📩 Solicitar Agendamento (WhatsApp)</button>
+            <button id="copyBtn" type="button" class="copy-btn" aria-label="Copiar mensagem">📋 Copiar mensagem</button>
+          </div>
+
+          <div id="form-notice" role="status" aria-live="polite"></div>
+
+          <div style="margin-top:12px">
+            <strong>Pré-visualização da mensagem:</strong>
+            <div id="preview" class="preview" aria-hidden="false">(A mensagem será exibida aqui quando preencher o formulário)</div>
+          </div>
         </form>
 
-        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
+        <div style="margin-top:12px;font-size:13px;color:var(--gold)">
+          Ou abra diretamente: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a>
+        </div>
       </aside>
     </main>
 
@@ -441,5 +464,6 @@ body{
   </script>
 </body>
 </html>
+
 
 
