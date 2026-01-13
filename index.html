@@ -31,7 +31,7 @@ body{
 
   background:
     /* NOVA IMAGEM – canto inferior direito */
-    url('img/fundo2.png') no-repeat right bottom,
+    url('img/fundo.png') no-repeat right bottom,
 
     /* camada de gradiente que escurece gradualmente a imagem */
     linear-gradient(to bottom,
@@ -48,7 +48,7 @@ body{
     linear-gradient(180deg,var(--bg-dark),var(--petrol));
 
   background-size:
-    auto 600px,      /* fundo2.png */
+    auto 600px,      /* fundo.png */
     cover,
     auto 85vh,
     cover;
@@ -96,6 +96,13 @@ body{
     @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.benefits{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.avatar{display:none}.whatsapp-float{right:12px;bottom:12px}}
     @media (max-width:600px){header{padding:8px 0}.hero{gap:16px}.card{padding:14px}.actions{flex-direction:column}.btn{width:100%;text-align:center}.whatsapp-float{right:10px;bottom:10px}}
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
+    #faq{
+  background-image: url("img/fundo2.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto 600px;
+  padding-bottom: 300px;
+}
   </style>
 </head>
 <body>
