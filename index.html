@@ -30,6 +30,9 @@ body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
 
   background:
+    /* NOVA IMAGEM – canto inferior direito */
+    url('img/fundo2.png') no-repeat right bottom,
+
     /* camada de gradiente que escurece gradualmente a imagem */
     linear-gradient(to bottom,
       rgba(7,40,43,0) 0%,
@@ -37,13 +40,20 @@ body{
       rgba(7,40,43,0.70) 70%,
       rgba(7,40,43,0.92) 100%
     ),
+
     /* imagem no topo à esquerda */
     url('img/fundo1.png') no-repeat left top,
+
     /* gradiente de fundo padrão */
     linear-gradient(180deg,var(--bg-dark),var(--petrol));
 
-  background-size: auto 85vh; /* imagem bem definida no topo */
-  background-attachment: fixed, scroll, scroll;
+  background-size:
+    auto 280px,      /* fundo2.png */
+    cover,
+    auto 85vh,
+    cover;
+
+  background-attachment: scroll, fixed, scroll, scroll;
 
   color:var(--text-light);
   -webkit-font-smoothing:antialiased;
