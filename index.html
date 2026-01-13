@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
+  
       :root{
       --bg-dark:#07282b;
       --petrol:#0f4b4d;
@@ -28,6 +29,7 @@
     /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+  overflow-x: hidden;
 
   background:
    
@@ -93,22 +95,29 @@ body{
   overflow: visible;
 }
 
+/* imagem decorativa lateral do FAQ */
 #faq::after{
   content: "";
   position: absolute;
 
-  right: -900px;      /* empurra para fora do container */
-  bottom: -140px;
+  right: -600px;
+  bottom: -120px;
 
-  width: 800px;
-  height: 800px;
+  width: 520px;
+  height: 520px;
 
   background-image: url("img/fundo2.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: right bottom;
 
   pointer-events: none;
   z-index: 0;
+
+@media (max-width: 768px){
+  #faq::after{
+    display: none;
+  }
 }
   </style>
 </head>
