@@ -27,6 +27,7 @@
 
     /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
+ body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
 
   background:
@@ -47,8 +48,12 @@ body{
     /* gradiente de fundo padrão */
     linear-gradient(180deg,var(--bg-dark),var(--petrol));
 
-  background-size: auto /* fundo2.png */
- 
+  background-size:
+    auto,      /* fundo2.png */
+    cover,
+    auto 85vh,
+    cover;
+
   background-attachment: scroll, fixed, scroll, scroll;
 
   color:var(--text-light);
