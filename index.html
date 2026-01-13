@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -11,8 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-  
-      :root{
+    :root{
       --bg-dark:#07282b;
       --petrol:#0f4b4d;
       --gold:#c39b3b;
@@ -29,10 +29,8 @@
     /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-  overflow-x: hidden;
 
   background:
-   
     /* camada de gradiente que escurece gradualmente a imagem */
     linear-gradient(to bottom,
       rgba(7,40,43,0) 0%,
@@ -40,14 +38,13 @@ body{
       rgba(7,40,43,0.70) 70%,
       rgba(7,40,43,0.92) 100%
     ),
-
     /* imagem no topo à esquerda */
     url('img/fundo1.png') no-repeat left top,
-
     /* gradiente de fundo padrão */
     linear-gradient(180deg,var(--bg-dark),var(--petrol));
 
-  background-attachment: scroll, mobile, scroll, scroll;
+  background-size: auto 85vh; /* imagem bem definida no topo */
+  background-attachment: fixed, scroll, scroll;
 
   color:var(--text-light);
   -webkit-font-smoothing:antialiased;
@@ -90,35 +87,6 @@ body{
     @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.benefits{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.avatar{display:none}.whatsapp-float{right:12px;bottom:12px}}
     @media (max-width:600px){header{padding:8px 0}.hero{gap:16px}.card{padding:14px}.actions{flex-direction:column}.btn{width:100%;text-align:center}.whatsapp-float{right:10px;bottom:10px}}
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
-#faq{
-  position: relative;
-  overflow: visible;
-}
-
-/* imagem decorativa lateral do FAQ */
-#faq::after{
-  content: "";
-  position: absolute;
-
-  right: -600px;
-  bottom: -120px;
-
-  width: 520px;
-  height: 520px;
-
-  background-image: url("img/fundo2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right bottom;
-
-  pointer-events: none;
-  z-index: 0;
-
-@media (max-width: 768px){
-  #faq::after{
-    display: none;
-  }
-}
   </style>
 </head>
 <body>
@@ -138,7 +106,7 @@ body{
   <a class="btn-ghost" href="#sobre">Sobre</a>
   <a class="btn-ghost" href="#como">Como funciona</a>
  <a class="btn-ghost"
-       href="https://www.instagram.com/planodador/"
+       href="https://www.instagram.com/dr.sandropj/"
        target="_blank"
        rel="noopener"
        aria-label="Instagram Plano da Dor">
