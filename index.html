@@ -31,7 +31,7 @@ body{ font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
   margin:0;
   padding:0;
   background:
-    linear-gradient(rgba(7,40,43,0.82), rgba(7,40,43,0.92)),
+    linear-gradient(rgba(7,40,43,0.55), rgba(7,40,43,0.62)),
     url('img/fff.png') no-repeat center center;
 background-size: cover;
 background-position: center;
@@ -188,6 +188,12 @@ background-position: center;
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
     html{
   -webkit-text-size-adjust:100%;
+.section-dark{
+  background: rgba(7,40,43,0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 60px 40px;
+  border-radius: 14px;
 }
   </style>
 </head>
@@ -270,7 +276,7 @@ background-position: center;
       </aside>
     </main>
     <!-- SOBRE -->
-  <section id="sobre">
+  <section id="sobre" class="section-dark">
       <div class="grid-2">
         <section id="sobre">
   <h2 style="font-family:'Cinzel',serif">Excelência clínica não é volume. É critério.</h2>
@@ -356,7 +362,7 @@ background-position: center;
 </section>
 
     <!-- COMO FUNCIONA -->
-    <section id="como">
+    <section id="como" class="section-dark">
       <h2 style="font-family:'Cinzel',serif">Como funciona a consulta online</h2>
       <ol style="color:var(--text-light)">
         <li>Preenchimento do formulário e envio de dados clínicos.</li>
@@ -377,7 +383,7 @@ background-position: center;
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
+    <section id="faq"class="section-dark">
       <h2 style="font-family:'Cinzel',serif">Perguntas Frequentes</h2>
       <div style="margin-top:12px">
         <div class="faq-item">
@@ -410,7 +416,7 @@ Procedimentos não são realizados por rotina ou conveniência, mas dentro de pr
     </section>
 
     <!-- CTA FINAL -->
-   <section id="aplicacao">
+   <section id="aplicacao"class="section-dark">
   <div class="cta-final">
 
     <h2 style="font-family:'Cinzel',serif">Atendimento seletivo e personalizado.</h2>
