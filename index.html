@@ -50,7 +50,16 @@ body{
     nav{display:flex;gap:10px;align-items:center}
     .btn{background:var(--gold);color:var(--bg-);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:var(--text-light);text-decoration:none}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:22px 0;min-height:420px}
+    .hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:28px;
+  align-items:center;
+
+  padding:245px 0 120px 0; /* AQUI está o ajuste */
+
+  min-height:420px;
+}
     h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);margin:0;color:var(--text-light)}
     .lead{font-size:clamp(15px,1.8vw,18px);color:var(--muted);margin-top:10px}
     .actions{display:flex;gap:12px;margin-top:14px}
@@ -192,12 +201,23 @@ body{
     html{
   -webkit-text-size-adjust:100%;}
 .section-dark{
-  background: rgba(7,40,43,0.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 60px 40px;
-  border-radius: 14px;
+  background: rgba(7,40,43,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 50px;
+  border-radius: 18px;
+  border:1px solid rgba(195,155,59,0.35);
 }
+.hero-box{
+  width:100%;
+  max-width:100%;
+  align-self:center; /* mantém alinhamento vertical */
+}
+    .hero-box h1{
+  font-size:clamp(22px,2.8vw,30px);
+  line-height:1.2;
+}
+
   </style>
 </head>
 <body>
@@ -229,8 +249,8 @@ body{
     </header>
 
     <!-- HERO -->
-  <main class="hero" role="main">
-     <div>
+ <main class="hero" role="main">
+  <div class="hero-box section-dark">
   <h1>Medicina Estratégica para Alta Performance e Longevidade</h1>
   <p class="lead">Precisão clínica para quem trata saúde como patrimônio.</p>
 
