@@ -27,17 +27,19 @@
     html,body{height:100%;margin:0}
 
     /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
-body{ font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+body{
+  font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
   margin:0;
   padding:0;
+
   background:
     linear-gradient(rgba(7,40,43,0.55), rgba(7,40,43,0.62)),
-    url('img/fff2c.png') no-repeat center center;
-background-size: cover;
-background-position: center;
+    url('img/fff2c.png') no-repeat center center fixed;
+
+  background-size:cover;
+
   color:var(--text-light);
   line-height:1.6;
-
 }
     .container{max-width:var(--maxw);margin:0 auto}
     header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
@@ -187,7 +189,7 @@ background-position: center;
 }
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
     html{
-  -webkit-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;}
 .section-dark{
   background: rgba(7,40,43,0.45);
   backdrop-filter: blur(6px);
