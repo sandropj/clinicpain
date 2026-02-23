@@ -42,7 +42,11 @@ body{
   color:var(--text-light);
   line-height:1.6;
 }
-    .container{max-width:var(--maxw);margin:0 auto}
+    .container{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+}
     header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--bg-);font-weight:700;font-family:'Cinzel',serif}
@@ -50,17 +54,17 @@ body{
     nav{display:flex;gap:10px;align-items:center}
     .btn{background:var(--gold);color:var(--bg-);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:var(--text-light);text-decoration:none}
-    .hero{
+.hero{
   display:grid;
   grid-template-columns:1fr 420px;
-  gap:28px;
+  gap:40px;
   align-items:center;
 
-  padding:290px 0 155px 0; /* AQUI está o ajuste altura */
+  min-height:100vh;
+  padding:8vh 0;
 
-  min-height:420px;
 }
-    h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);margin:0;color:var(--text-light)}
+   h1{font-family:'Cinzel',serif;  font-size:clamp(24px,3vw,42px);  line-height:1.2;}
     .lead{font-size:clamp(15px,1.8vw,18px);color:var(--muted);margin-top:10px}
     .actions{display:flex;gap:12px;margin-top:14px}
     .card{background:var(--card);color:var(--text-dark);border-radius:var(--radius);padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18)}
@@ -82,120 +86,70 @@ body{
     .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
     .whatsapp-btn{background:#25D366;color:#002b2b;padding:12px 14px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.24);text-decoration:none}
     .whatsapp-label{background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:10px;font-size:13px}
-  /* ===== DESKTOP GRANDE (1400px+) ===== */
+/* ===== DESKTOP GRANDE ===== */
 @media (min-width:1400px){
   .container{
     max-width:1300px;
   }
-
-  h1{
-    font-size:48px;
-  }
-
-  .hero{
-    min-height:520px;
-  }
 }
 
-
-/* ===== DESKTOP PADRÃO ===== */
+/* ===== NOTEBOOK ===== */
 @media (max-width:1200px){
-  .container{
-    max-width:1000px;
-  }
-
   .hero{
     grid-template-columns:1fr 380px;
   }
 }
 
-
-/* ===== NOTEBOOK / TABLET GRANDE ===== */
+/* ===== TABLET ===== */
 @media (max-width:992px){
-
-  body{
-    padding:16px;
-  }
 
   .hero{
     grid-template-columns:1fr;
-    gap:30px;
     min-height:auto;
-  }
-
-  .card{
-    margin-top:20px;
+    padding:80px 0;
   }
 
   .benefits{
     grid-template-columns:1fr 1fr;
   }
 
+  .grid-2{
+    grid-template-columns:1fr;
+  }
 }
 
-
-/* ===== TABLET / SMARTPHONE GRANDE ===== */
+/* ===== SMARTPHONE ===== */
 @media (max-width:768px){
+
+  body{
+    background-attachment:scroll; /* corrige bug mobile */
+  }
 
   header{
     flex-direction:column;
     align-items:flex-start;
-    gap:12px;
   }
 
   nav{
     flex-wrap:wrap;
-    gap:8px;
   }
 
   .hero{
-    padding:20px 0;
-  }
-
-  .grid-2{
-    grid-template-columns:1fr;
+    padding:60px 0;
   }
 
   .benefits{
     grid-template-columns:1fr;
   }
 
-  .avatar{
-    display:none;
-  }
-
-  h1{
-    font-size:28px;
-  }
-
-}
-
-
-/* ===== SMARTPHONE PEQUENO ===== */
-@media (max-width:480px){
-
-  body{
-    padding:12px;
-  }
-
-  h1{
-    font-size:24px;
+  .actions{
+    flex-direction:column;
   }
 
   .btn{
     width:100%;
     text-align:center;
   }
-
-  .actions{
-    flex-direction:column;
-  }
-
-  .whatsapp-float{
-    right:12px;
-    bottom:12px;
-  }
-
 }
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
     html{
@@ -217,7 +171,12 @@ body{
   font-size:clamp(22px,2.8vw,30px);
   line-height:1.2;
 }
-
+/* ===== IMAGEM RESPONSIVA HERO ===== */
+.hero-img{
+  width:100%;
+  max-width:320px;
+  height:auto;
+}
   </style>
 </head>
 <body>
@@ -270,7 +229,7 @@ body{
 </div>
         <!-- profile compact card (mobile-friendly) -->
         <div style="margin-top:20px">
-    <img src="img/fundo1.png" style="width:300px;">
+<img src="img/fundo1.png" class="hero-img">
           <div class="card profile" style="align-items:center">
                     <div class="credentials" style="max-width:60ch">
               <h3>Dr. Sandro Pereira</h3>
